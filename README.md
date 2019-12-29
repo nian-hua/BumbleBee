@@ -2,6 +2,8 @@
 
 BumbleBee是一个分布式脚本运行程序，只需要向QueueBee提交脚本和任务，QueueBee会自动将脚本和任务下发给WorkeBee并收集运行结果。
 
+# 当前版本V0.001
+
 # 使用方法
 
 ## 配置
