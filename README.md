@@ -25,3 +25,20 @@ WorkeBee端启动/WorkeBee/main.py
 ## 下发任务
 
 运行start.py，查看任务进度，任务结束后会保存至/QueueBee/result.txt中
+
+## python脚本样例
+
+```
+import requests
+import re
+
+def BumbleBeeWorker(HOST): # 该函数名不可修改，接收一个字符串参数，你可以在函数内对其进行处理
+    try:
+        r = requests.get(HOST)
+        r.encoding = 'utf-8'
+        context = re.findall(r'<title>(.*?)</title>', r.text)
+        if context != []:
+            return context[0]
+    except:
+        return 0          #务必保证所有情况均有返回值，且要保证程序不会异常退出
+```
